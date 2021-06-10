@@ -1,9 +1,13 @@
 class BowlingGame {
+
+    var list = mutableListOf<Int>()
+
     fun roll(pins: Int) {
+        list.add(pins)
     }
 
     fun score(): Int {
-        return 0
+        return list.sum()
     }
 
 }
