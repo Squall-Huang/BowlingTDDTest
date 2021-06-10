@@ -18,6 +18,15 @@ class BowlingGameTest {
         scoreShouldBe(60)
     }
 
+    @Test
+    fun `one spare`() {
+        rolls(1, 3)
+        rolls(1, 7)
+        rolls(18, 3)
+
+        scoreShouldBe(67)
+    }
+
     private fun scoreShouldBe(score: Int) {
         assertEquals(score, bowlingGame.score())
     }

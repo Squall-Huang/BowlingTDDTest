@@ -10,8 +10,13 @@ class BowlingGame {
         var score = 0
         var rollIndex = 0
         for (i in 1..10) {
-            score += list[rollIndex] + list[rollIndex + 1]
-            rollIndex += 2
+            if (list[rollIndex] + list[rollIndex + 1] == 10) {
+                score += 10 + list[rollIndex + 2]
+                rollIndex += 2
+            } else {
+                score += list[rollIndex] + list[rollIndex + 1]
+                rollIndex += 2
+            }
         }
         return score
     }
