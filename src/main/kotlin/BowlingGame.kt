@@ -7,7 +7,13 @@ class BowlingGame {
     }
 
     fun score(): Int {
-        return list.sum()
+        var score = 0
+        var rollIndex = 0
+        for (i in 1..10) {
+            score += list[rollIndex] + list[rollIndex + 1]
+            rollIndex += 2
+        }
+        return score
     }
 
 }
