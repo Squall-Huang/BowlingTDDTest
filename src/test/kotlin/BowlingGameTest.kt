@@ -2,14 +2,22 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class BowlingGameTest {
+    val bowlingGame = BowlingGame()
 
     @Test
     fun `all zero`() {
-        val bowlingGame = BowlingGame()
-        (1..20).forEach {
-            bowlingGame.roll(0)
+        rolls(20, 0)
+
+        scoreShouldBe(0)
+    }
+
+    private fun scoreShouldBe(score: Int) {
+        assertEquals(score, bowlingGame.score())
+    }
+
+    private fun rolls(rollNumber: Int, pins: Int) {
+        (1..rollNumber).forEach {
+            bowlingGame.roll(pins)
         }
-        val score = bowlingGame.score()
-        assertEquals(0,score)
     }
 }
